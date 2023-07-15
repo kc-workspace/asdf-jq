@@ -1,0 +1,63 @@
+---
+## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v2.0.1
+_src_path: gh:kc-workspace/asdf-plugin-template.git
+addon_yaml:
+    archive: false
+    checksum: true
+    download: true
+    fetch: true
+    git: false
+    github: true
+    gpg: true
+    help: true
+    install: true
+    package: false
+    python: false
+    system: true
+    tags: true
+    version: false
+app_desc: Command-line JSON processor
+app_name: jq
+app_repo: https://github.com/jqlang/jq
+app_type: standalone
+app_website: https://jqlang.github.io/jq/
+archive_enabled: false
+checksum_conf_algorithm: 256
+checksum_enabled: true
+checksum_url: https://github.com/jqlang/jq/raw/master/sig/v{version}/sha256sum.txt
+custom_arch_enabled: true
+custom_arch_yaml:
+    aarch64*: 64
+    armv5*: 32
+    armv6*: 32
+    armv7*: 32
+    i386: 32
+    i686: 32
+    powerpc64le: 64
+    ppc64le: 64
+    x86: 32
+    x86_64: 64
+custom_bin_paths: bin
+custom_non_stable_version: (-src|-dev|-latest|-stm|[-\.]rc|-alpha|-beta|[-\.]pre|-next|snapshot|master)
+custom_os_enabled: false
+custom_require_commands: ''
+download_url: https://github.com/jqlang/jq/releases/download/jq-{version}/jq-$(download_link)
+gpg_enabled: true
+gpg_fingerprint: AF19040C71523402
+gpg_public_key_link: https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release.key
+gpg_public_key_type: link
+gpg_sig_url: https://github.com/jqlang/jq/raw/master/sig/v{version}/jq-$(download_link).asc
+install_map_enabled: true
+install_map_method: move
+install_map_yaml:
+    jq: bin/jq
+package_enabled: false
+plugin_author: Kamontat Chantrachirathumrong
+plugin_name: asdf-jq
+plugin_org: kc-workspace
+plugin_repo: https://github.com/kc-workspace/asdf-jq.git
+source_enabled: false
+test_cmd_args: --version
+version_file_enabled: false
+version_prefix: jq-
