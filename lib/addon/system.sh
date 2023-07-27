@@ -17,7 +17,7 @@ kc_asdf_get_os() {
 
   if command -v _kc_asdf_custom_os >/dev/null; then
     local tmp="$os"
-    os="$(_kc_asdf_custom_os "$os")"
+    os="$(_kc_asdf_custom_os "$tmp")"
     kc_asdf_debug "$ns" "developer has custom OS name from %s to %s" "$tmp" "$os"
   fi
 
@@ -56,40 +56,40 @@ kc_asdf_get_arch() {
   arch="$(uname -m)"
   case "$arch" in
   aarch64*)
-    arch="64"
+    arch="arm64"
     ;;
   armv5*)
-    arch="32"
+    arch="armv5"
     ;;
   armv6*)
-    arch="32"
+    arch="armv6"
     ;;
   armv7*)
-    arch="32"
+    arch="armv7"
     ;;
   i386)
-    arch="32"
+    arch="386"
     ;;
   i686)
-    arch="32"
+    arch="386"
     ;;
   powerpc64le)
-    arch="64"
+    arch="ppc64le"
     ;;
   ppc64le)
-    arch="64"
+    arch="ppc64le"
     ;;
   x86)
-    arch="32"
+    arch="386"
     ;;
   x86_64)
-    arch="64"
+    arch="amd64"
     ;;
   esac
 
   if command -v _kc_asdf_custom_arch >/dev/null; then
     local tmp="$arch"
-    arch="$(_kc_asdf_custom_arch "$arch")"
+    arch="$(_kc_asdf_custom_arch "$tmp")"
     kc_asdf_debug "$ns" "developer has custom ARCH name from %s to %s" "$tmp" "$arch"
   fi
 
