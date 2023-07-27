@@ -56,34 +56,34 @@ kc_asdf_get_arch() {
   arch="$(uname -m)"
   case "$arch" in
   aarch64*)
-    arch="arm64"
+    arch="64"
     ;;
   armv5*)
-    arch="armv5"
+    arch="32"
     ;;
   armv6*)
-    arch="armv6"
+    arch="32"
     ;;
   armv7*)
-    arch="armv7"
+    arch="32"
     ;;
   i386)
-    arch="386"
+    arch="32"
     ;;
   i686)
-    arch="386"
+    arch="32"
     ;;
   powerpc64le)
-    arch="ppc64le"
+    arch="64"
     ;;
   ppc64le)
-    arch="ppc64le"
+    arch="64"
     ;;
   x86)
-    arch="386"
+    arch="32"
     ;;
   x86_64)
-    arch="amd64"
+    arch="64"
     ;;
   esac
 
