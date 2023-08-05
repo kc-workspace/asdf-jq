@@ -31,7 +31,7 @@ kc_asdf_gpg() {
   local public_key
   public_key="$(kc_asdf_temp_file)"
   kc_asdf_fetch_file \
-    "https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release.key" \
+    "https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release-old.key" \
     "$public_key"
   ! [ -f "$public_key" ] &&
     kc_asdf_error "$ns" "public key (%s) is missing" "$public_key" &&
