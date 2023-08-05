@@ -49,16 +49,16 @@ plugin_repo: https://github.com/kc-workspace/asdf-jq.git
 source_enabled: false
 sys_arch_enabled: true
 sys_arch_yaml:
-    aarch64*: 64
-    armv5*: 32
-    armv6*: 32
-    armv7*: 32
-    i386: 32
-    i686: 32
-    powerpc64le: 64
-    ppc64le: 64
-    x86: 32
-    x86_64: 64
+    aarch64*: '64'
+    armv5*: '32'
+    armv6*: '32'
+    armv7*: '32'
+    i386: '32'
+    i686: '32'
+    powerpc64le: '64'
+    ppc64le: '64'
+    x86: '32'
+    x86_64: '64'
 sys_ext_enabled: false
 sys_os_enabled: false
 test_cmd_args: --version
