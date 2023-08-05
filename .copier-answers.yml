@@ -34,7 +34,7 @@ gpg_enabled: true
 gpg_public_key_email: ''
 gpg_public_key_fingerprint: ''
 gpg_public_key_keyid: AF19040C71523402
-gpg_public_key_link: https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release.key
+gpg_public_key_link: https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release-old.key
 gpg_public_key_type: link
 gpg_sig_url: https://github.com/jqlang/jq/raw/master/sig/v{version}/jq-$(download_link).asc
 install_map_enabled: true
