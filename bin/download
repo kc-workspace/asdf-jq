@@ -23,7 +23,9 @@ _kc_asdf_custom_checksum() {
   ## FIXME: https://github.com/jqlang/jq/pull/2899
   local sha file
   while read -r sha file; do
-    "$create" "$file" "$sha"
+    if [[ "$file" == "$filename" ]]; then
+      "$create" "$file" "$sha"
+    fi
   done <"$checksum_tmp"
 }
 
