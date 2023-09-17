@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.1](https://github.com/kc-workspace/asdf-jq/compare/v1.0.0...v1.0.1) (2023-09-17)
+
+
+### Improvements
+
+* jq signature key changes ([8d0f6fb](https://github.com/kc-workspace/asdf-jq/commit/8d0f6fb832997ed6c307e235743fee9b84455b3d))
+* update plugin from template [autocommit] ([d24b136](https://github.com/kc-workspace/asdf-jq/commit/d24b136426551839db2c23384c0928f5f289b75e))
+* update plugin from template [autocommit] ([4bd1702](https://github.com/kc-workspace/asdf-jq/commit/4bd1702bc154698541754b2979cbf6ea2e88d210))
+
+
+### Bugfixes
+
+* invalid arch number type ([ac832fc](https://github.com/kc-workspace/asdf-jq/commit/ac832fce4bb71db1b46703c5636b4acc6fce9829))
+
+
+### Miscellaneous
+
+* reapplied template with new config ([c2e9681](https://github.com/kc-workspace/asdf-jq/commit/c2e968190c364dee9c43b0ec5ceee1c3becc848e))
+
 ## 1.0.0 (2023-07-27)
 
 
