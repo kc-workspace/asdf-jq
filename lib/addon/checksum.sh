@@ -54,7 +54,7 @@ kc_asdf_checksum() {
   command -v "$shasum" >/dev/null ||
     shasum="shasum"
 
-  kc_asdf_debug "$ns" "checksum file content"
+  __asdf_if_debug && ls -la "$dirpath"
   __asdf_if_debug && cat "$cs_path"
 
   local tmp="$PWD"
