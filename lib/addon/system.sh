@@ -14,6 +14,11 @@ kc_asdf_get_os() {
   fi
 
   os="$(uname | tr '[:upper:]' '[:lower:]')"
+  case "$os" in
+  darwin)
+    os="macos"
+    ;;
+  esac
 
   if command -v _kc_asdf_custom_os >/dev/null; then
     local tmp="$os"
@@ -27,7 +32,7 @@ kc_asdf_get_os() {
 ## Is current OS is macOS
 ## usage: `kc_asdf_is_darwin`
 kc_asdf_is_darwin() {
-  local os="${KC_ASDF_OS}" custom=""
+  local os="${KC_ASDF_OS}" custom="macos"
   local darwin="${custom:-darwin}"
   [[ "$os" == "$darwin" ]]
 }
@@ -56,34 +61,34 @@ kc_asdf_get_arch() {
   arch="$(uname -m)"
   case "$arch" in
   aarch64*)
-    arch="64"
+    arch="arm64"
     ;;
   armv5*)
-    arch="32"
+    arch="armhf"
     ;;
   armv6*)
-    arch="32"
+    arch="armhf"
     ;;
   armv7*)
-    arch="32"
+    arch="armhf"
     ;;
   i386)
-    arch="32"
+    arch="i386"
     ;;
   i686)
-    arch="32"
+    arch="i386"
     ;;
   powerpc64le)
-    arch="64"
+    arch="powerpc"
     ;;
   ppc64le)
-    arch="64"
+    arch="ppc64el"
     ;;
   x86)
-    arch="32"
+    arch="amd64"
     ;;
   x86_64)
-    arch="64"
+    arch="amd64"
     ;;
   esac
 

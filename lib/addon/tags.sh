@@ -38,7 +38,7 @@ kc_asdf_tags_stable() {
   local ns="tags-stable.addon"
   local input="$1" output
   output="$(kc_asdf_temp_file)"
-  local query='(-src|-dev|-latest|-stm|[-\.]rc|-alpha|-beta|[-\.]pre|-next|snapshot|master)'
+  local query='(rc|-src|-dev|-latest|-stm|[-\.]rc|-alpha|-beta|[-\.]pre|-next|snapshot|master)'
 
   kc_asdf_debug "$ns" "filtering from %s" "$input"
   if [ -f "$input" ] && grep -ivE "$query" "$input" >"$output"; then

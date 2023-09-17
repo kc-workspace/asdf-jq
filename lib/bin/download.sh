@@ -54,7 +54,7 @@ __asdf_bin() {
     kc_asdf_error "$ns" "reference mode is not support by current plugin"
     return 1
   elif kc_asdf_is_ver; then
-    url="https://github.com/jqlang/jq/releases/download/jq-{version}/jq-$(download_link)"
+    url="https://github.com/jqlang/jq/releases/download/jq-{version}/jq-{os}-{arch}"
     url="$(kc_asdf_template "$url" "${vars[@]}")"
     command -v _kc_asdf_custom_download_url >/dev/null &&
       kc_asdf_debug "$ns" "developer custom download link" &&
@@ -95,7 +95,7 @@ __asdf_bin() {
     fi
     if kc_asdf_enabled_feature gpg; then
       local gpg_sig_url
-      gpg_sig_url="https://github.com/jqlang/jq/raw/master/sig/v{version}/jq-$(download_link).asc"
+      gpg_sig_url="https://github.com/jqlang/jq/raw/master/sig/v{version}/jq-{os}-{arch}.asc"
       [ -n "$gpg_sig_url" ] &&
         gpg_sig_url="$(kc_asdf_template "$gpg_sig_url" "${vars[@]}")"
       kc_asdf_step "gpg" "$tmpfile" \
@@ -108,6 +108,17 @@ __asdf_bin() {
       outpath="$outdir/$outfile"
       kc_asdf_step "transfer" "$outpath" \
         kc_asdf_transfer "copy" "$tmppath" "$outpath" ||
+        return 1
+    elif [[ "$mode" == "archive" ]]; then
+      local internal_path
+      outpath="$outdir"
+      internal_path=""
+      [ -n "$internal_path" ] &&
+        internal_path="$(kc_asdf_template "$internal_path" "${vars[@]}")"
+      kc_asdf_debug "$ns" "extracting '%s' to '%s' (%s)" \
+        "$tmppath" "$outpath" "$internal_path"
+      kc_asdf_step "extract" "$outpath" \
+        kc_asdf_archive_extract "$tmppath" "$outpath" "$internal_path" ||
         return 1
     else
       kc_asdf_error "$ns" "invalid download mode name '%s'" "$mode"

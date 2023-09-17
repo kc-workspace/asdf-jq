@@ -18,6 +18,7 @@ __asdf_bin() {
   local deps=(git curl sed grep mktemp xargs tr)
   deps+=(sha256sum shasum)
   deps+=(gpg)
+  deps+=(tar unzip)
 
   for dep in "${deps[@]}"; do
     echo "$dep"

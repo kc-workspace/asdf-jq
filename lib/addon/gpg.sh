@@ -27,11 +27,12 @@ kc_asdf_gpg() {
   local dirpath filename
   dirpath="$(dirname "$filepath")"
   filename="$(basename "$filepath")"
-  local keyid="AF19040C71523402"
+  local email="no-send-email@jqlang.github.io"
+  local fingerprint="B8D12641B2D55764B75CFFA5E1A7B08C07E9EE86"
   local public_key
   public_key="$(kc_asdf_temp_file)"
   kc_asdf_fetch_file \
-    "https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release-old.key" \
+    "https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release-new.key" \
     "$public_key"
   ! [ -f "$public_key" ] &&
     kc_asdf_error "$ns" "public key (%s) is missing" "$public_key" &&

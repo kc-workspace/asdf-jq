@@ -12,6 +12,8 @@ kc_asdf_download_mode() {
     mode="custom"
   elif echo "$filename" | grep -qiE "\.git$"; then
     mode="git"
+  elif echo "$filename" | grep -qiE "(\\.tar\\.gz|\\.tgz|\\.zip)$"; then
+    mode="archive"
   fi
 
   kc_asdf_debug "$ns" "download mode of %s is %s" \

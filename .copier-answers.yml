@@ -1,7 +1,7 @@
 ---
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v2.2.3
-_src_path: gh:kc-workspace/asdf-plugin-template.git
+_commit: v2.2.3-12-g7c62e22
+_src_path: /Users/kamontat/Desktop/Personal/asdf-plugin-template
 addon_yaml:
     archive: false
     checksum: true
@@ -22,21 +22,24 @@ app_name: jq
 app_repo: https://github.com/jqlang/jq
 app_type: standalone
 app_website: https://jqlang.github.io/jq/
-archive_enabled: false
+archive_conf_path: ''
+archive_conf_strip: 0
+archive_enabled: true
+archive_regex: (\\.tar\\.gz|\\.tgz|\\.zip)$
 checksum_conf_algorithm: 256
 checksum_enabled: true
 checksum_url: https://github.com/jqlang/jq/raw/master/sig/v{version}/sha256sum.txt
 custom_bin_paths: bin
-custom_non_stable_version: (-src|-dev|-latest|-stm|[-\.]rc|-alpha|-beta|[-\.]pre|-next|snapshot|master)
+custom_non_stable_version: (rc|-src|-dev|-latest|-stm|[-\.]rc|-alpha|-beta|[-\.]pre|-next|snapshot|master)
 custom_require_commands: ''
-download_url: https://github.com/jqlang/jq/releases/download/jq-{version}/jq-$(download_link)
+download_url: https://github.com/jqlang/jq/releases/download/jq-{version}/jq-{os}-{arch}
 gpg_enabled: true
-gpg_public_key_email: ''
-gpg_public_key_fingerprint: ''
-gpg_public_key_keyid: AF19040C71523402
-gpg_public_key_link: https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release-old.key
+gpg_public_key_email: no-send-email@jqlang.github.io
+gpg_public_key_fingerprint: B8D12641B2D55764B75CFFA5E1A7B08C07E9EE86
+gpg_public_key_keyid: ''
+gpg_public_key_link: https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release-new.key
 gpg_public_key_type: link
-gpg_sig_url: https://github.com/jqlang/jq/raw/master/sig/v{version}/jq-$(download_link).asc
+gpg_sig_url: https://github.com/jqlang/jq/raw/master/sig/v{version}/jq-{os}-{arch}.asc
 install_map_enabled: true
 install_map_method: move
 install_map_yaml:
@@ -49,18 +52,20 @@ plugin_repo: https://github.com/kc-workspace/asdf-jq.git
 source_enabled: false
 sys_arch_enabled: true
 sys_arch_yaml:
-    aarch64*: '64'
-    armv5*: '32'
-    armv6*: '32'
-    armv7*: '32'
-    i386: '32'
-    i686: '32'
-    powerpc64le: '64'
-    ppc64le: '64'
-    x86: '32'
-    x86_64: '64'
+    aarch64*: arm64
+    armv5*: armhf
+    armv6*: armhf
+    armv7*: armhf
+    i386: i386
+    i686: i386
+    powerpc64le: powerpc
+    ppc64le: ppc64el
+    x86: amd64
+    x86_64: amd64
 sys_ext_enabled: false
-sys_os_enabled: false
+sys_os_enabled: true
+sys_os_yaml:
+    darwin: macos
 test_cmd_args: --version
 version_file_enabled: false
 version_prefix: jq-
