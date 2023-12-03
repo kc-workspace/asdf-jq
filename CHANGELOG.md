@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/kc-workspace/asdf-jq/compare/v2.0.0...v2.0.1) (2023-12-03)
+
+
+### Improvements
+
+* update plugin from template [autocommit] ([dd2bedf](https://github.com/kc-workspace/asdf-jq/commit/dd2bedf43ef8394d813a5185464f8adb00e5b0a9))
+
 ## [2.0.0](https://github.com/kc-workspace/asdf-jq/compare/v1.0.1...v2.0.0) (2023-11-06)
 
 
