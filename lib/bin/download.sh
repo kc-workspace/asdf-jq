@@ -98,7 +98,7 @@ __asdf_bin() {
       gpg_sig_url="https://github.com/jqlang/jq/raw/master/sig/v{version}/jq-{os}-{arch}.asc"
       [ -n "$gpg_sig_url" ] &&
         gpg_sig_url="$(kc_asdf_template "$gpg_sig_url" "${vars[@]}")"
-      kc_asdf_step "gpg" "$tmpfile" \
+      kc_asdf_step "gpg" "$gpg_sig_url" \
         kc_asdf_gpg "$tmppath" "$gpg_sig_url" ||
         return 1
     fi
