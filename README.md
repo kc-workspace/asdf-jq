@@ -35,17 +35,6 @@
 
 > This is an asdf-vm plugin generated from [template][template-gh].
 
-## Before start
-
-> If you still see this section, mean this plugin is not ready yet
-
-There are several things template cannot generate for you,
-below are a list of thing we should do:
-
-1. make sure that your GitHub repository already exist at [kc-workspace/asdf-jq][plugin-gh]
-2. please read [plugins create section][asdf-create-plugin] for more information
-3. remove `before start` section once you completed
-
 ## Install
 
 Plugin:
