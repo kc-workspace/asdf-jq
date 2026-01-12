@@ -35,7 +35,7 @@ custom_require_commands: ''
 download_url: https://github.com/jqlang/jq/releases/download/jq-{version}/jq-{os}-{arch}
 gpg_enabled: true
 gpg_public_key_email: no-send-email@jqlang.github.io
-gpg_public_key_fingerprint: B8D12641B2D55764B75CFFA5E1A7B08C07E9EE86
+gpg_public_key_fingerprint: 93079A9511EFC0B7D6CDBFB5B0DA60FB454BAF18
 gpg_public_key_keyid: ''
 gpg_public_key_link: https://raw.githubusercontent.com/jqlang/jq/master/sig/jq-release-new.key
 gpg_public_key_type: link

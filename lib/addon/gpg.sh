@@ -28,7 +28,7 @@ kc_asdf_gpg() {
   dirpath="$(dirname "$filepath")"
   filename="$(basename "$filepath")"
   local email="no-send-email@jqlang.github.io"
-  local fingerprint="B8D12641B2D55764B75CFFA5E1A7B08C07E9EE86"
+  local fingerprint="93079A9511EFC0B7D6CDBFB5B0DA60FB454BAF18"
   local public_key
   public_key="$(kc_asdf_temp_file)"
   kc_asdf_fetch_file \
